@@ -1,214 +1,21 @@
 /*
-https://lzkj-isv.isvjcloud.com/wxgame/activity/8530275?activityId=e5cff304b4b545a98ba6130ceb4027d2
+https://lzkj-isv.isvjcloud.com/wxgame/activity/8530275?activityId=
 */
 const $ = new Env('加购物车抽奖');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
-"95a036d4a5d64af8aa25bce946ae8aec",
-"6cd6f89bf7cb4ad4aab7fdf7f27c8665",
-"5409c2b9f6db4591964b712a5ecde939",
-"6169e46916784333b31872a001549ce3",
-"3a541178cda644849987889842892ddf",
-"297013954f484ade829ad833d1129f06",
-"8acb8c49fab94c9b8b43c69a0544403c",
-"60d5d203147e47f1b7e6e31bf3d4f64e",
-"6f96aa1ce3a74bd1bff3068aaf295b59",
-"e169d5f957694a5198b2609d93d0cd21",
-"3951a6101a8d4c2b91fe0588f3b90d4d",
-"ceb2d3be323b476aaa77787cdeb93640",
-"b66f7c534159493cbed54b8a059f1ac7",
-"0bf802edba204ff88fa941a92494237b",
-"1900f76d7d37467ca2eaf17992e67e57",
-"021167e2993d4785adf3d3a8cbcd92a9",
-"dd977c155d3942caad4dcddf74f7cd26",
-"8edf9c234674436e80238244af539bc4",
-"b92196a9ad684050ac7cdc9ecf5fa779",
-"c76142e32e8b46c7b42062be52ef2523",
-"b965e8b6a82a42e9b4f205da4269b6e8",
-"6ddc3889cd0e4bc798e06cf86b8c4db9",
-"365379d2daab4a26a62e69bddccc2688",
-"40cc4ae63240444ca536f044c19daa93",
-"683495ffe50e4bf783f590058dd57d58",
-"7c1604681f9c4c48af710c7e58dc89e3",
-"c16602512f8c4c70a4ab5728df52e7d5",
-"897859865ea245239e87f880e21a032c",
-"d899d3214ee2407bb8839599d8b03cbf",
-"56953039ac8d4956809f4ae9ed2e0e3d",
-"709f2f6fb71f4b7d9894347668c3018f",
-"2344971a8957480fa2af6fe5c5b4115d",
-"187bad0fa5124ed6a2ce6e08a43e4f03",
-"7371d90caf964a46a3de05ce692a828c",
-"a6db8c4763114329b46a34ecf67402d5",
-"7fd45a42256c4447ab0c5c85d848cf32",
-"83756dd037514790926694bcc731a8f9",
-"c22f4dd40946446d96fb8a935c40a2ae",
-"699aa4c8cd1b41cd9d9b54d591862bb9",
-"cf77b88dd69846dfa2bcb5f69132fcd7",
-"6efdd0d7f67c4bf48b3ba2d2711a661a",
-"a79dc5e0acb043f7bef5f7ed59ecdd99",
-"9198140b216343d29f739c161ab98461",
-"31cc34e9ef754623ab8f795eb57d2a0b",
-"f50992e68ced4340a7b01875de7c64f3",
-"e749549dfbc4472db56bbcf5f4570932",
-"47edff69a42143afa2921be8e323a53c",
-"32734386d2b04755925cf5e494533b76",
-"38c38ef55c4e4dab9af30fb888e07a8f",
-"fdbcb1c895c249ae9f4d0cb08d8b2bd5",
-"dd4874fd23d74e5c86c1e8cf68f1c588",
-"79d4df50165c49d79526571dc68cd048",
-"29cb454e91c1455ebec094960786fcfa",
-"3a5d0d24cc1b4a2f8fa28b4ee84d88bf",
-"ab246490bc8d40b5b9dafa95fb6356c1",
-"97e13975d303414a9b206c09e0b126ac",
-"fc34aeb0b1974b47b55c7972eaaaaff3",
-"80fceed7a970414482a8240025871c39",
-"913197e9ee4e479e9b71a851e2dbcb0b",
-"58b35633322046ab9751abfff8fcd477",
-"29993fba05d9481d8da8572202ba9b4c",
-"7024ef78b7d74f579645d9f74ee54c40",
-"ec4fc8c2315b4e9cb5ecd6baa66c5861",
-"678d692e1ea143b89dd042fbde199179",
-"e721848900f44675bb0440f0941bceb6",
-"e83b82b7701146119053dc321492a239",
-"6c27e02adba24fee8198e08223abb43f",
-"e0fe44e572eb41469ed5e867f140d89e",
-"72a13ace86b1499b8bf17831cd151539",
-"71dfe880f924463da62fca2f12a4404a",
-"262d5bfd553e445db23b5ba187c5a9f4",
-"0994441bb5324f9999f1d76dd3c31f0d",
-"8a322fee3f5f43f7b7371250512a39a4",
-"544654285a7c4d599a625bdefc94d16f",
-"7b3964a58dfc4232872103e87817a9ac",
-"95075236ea5b48809f5ee5714357e002",
-"23068145aa2d496a90d61a72ef42b386",
-"f56041f707864ec5bccd47f9ce6b1c79",
-"ba7fc8f6e7ba4580af67f16443d9e12b",
-"c949e47ed5264c4e9c5b314a6e9a5acc",
-"0669df56cfd64da08822aa25279e4c65",
-"19d1f0466f0540b890461a069947b31b",
-"5407fc0a3c9c4e8d8a0fdb6f8779098a",
-"654990127e894f68b40e5912fbba3633",
-"eba9a226726e45e9b0443d172a6fe42d",
-"c4fbc428f5fb4533968e0574ca5be294",
-"c5a7bda439354ce39f815dfbf1b4e5b8",
-"90fb9887bbe644aabbe27d8de841a22f",
-"854819c3fcf14d1c85241eca509b085f",
-"d77c4a24865b4617be5b1d38f3297241",
-"d11163cf367c42cea5390ba7b0212cd4",
-"e47ef306493b49dd9a7cbac3e3b86ade",
-"38f5a8c392054817859f8d2266e7310b",
-"d9e369bfd0b24ce1bdc8ac6e4d3c91b0",
-"c372abead98a4b71a5eee9ca971a9949",
-"f4a5909258e64f3a8553d723395a48f3",
-"c5283ecdb9e04c86947e2e09009b128a",
-"2a8073f4b66b449d9491dda6265d22bc",
-"627fae9c98e4465685d03b1e9e0c0694",
-"caaa1901ce4144b98e9f836bb5a8a35f",
-"4de739cf07804af0be1c5420a5aea6e7",
-"98e07527d4c148bd8306e5079d761cf3",
-"a0ffbc5eaf2142f895906c85f071e60f",
-"2f3c55901805489ab47b7cb657ce7a7f",
-"a7d94be098c0431ba2761a1a0a09487a",
-"ecca494ea72c4ec99cec9b541ca43cee",
-"cc38b884eed94b299b93c1250437b14a",
-"35319a6abe894a55b1a07b7fbe3b8042",
-"0caad4445f1f4ec89bb5f3ca1c40e76c",
-"b4a01e9066fd4b95bc0c60a526f61c75",
-"e738cfad8d2e4244b504fcd82fdc42c9",
-"aac8e875e7b249cfbdc89a94ee436672",
-"d5ca6b3c33024025ab2e523725686479",
-"6391f9261f884a12ab6bf320673165bc",
-"a3feedb53aa04e9ca3e151a1333f532b",
-"2ba9f8db763842b990f220a0875c989d",
-"23182e7f574a4363b983b593c0dc2642",
-"18d93071150c49b7814f689e0c294f70",
-"edcda7f2db0641449b0cc721d6a966a6",
-"823d62d5423a437a9800b6bea5c9c2ca",
-"b5df7d1e569f4c8e9ec50b0e7b704041",
-"d2c7271d878b4f659628007ef852fce0",
-"5d6920e3c89e4569bf535ed3004c2085",
-"486b29c49dc34018b10b452348b7e929",
-"bbaa3a5c5c8d4225a4127110e596313c",
-"39977a9048cf416981773a065524500f",
-"9bcd0a5b09cb4040bbc15198142f1486",
-"b1464f8cd0c44b1ea895887bb11d94a2",
-"f1e322b121b740c0ab658cc584f135b0",
-"2c9d2f8e390f4daf9ddfb7b334748d46",
-"42a7dc943c01482ea773e3f09ef89a8b",
-"e40d66cd0ac94835a580f876a7d83fd1",
-"a7704de1176346b9a253cc3fdb823c8d",
-"1b703ad2154e441f972a6b605787ce73",
-"c759c54519b14541bc314ca4136cd16d",
-"613875fed9d047ba8d3ac218f83a9697",
-"6c060742c1904ff1af0053818f50af3d",
-"ecf679fd851443a88763ea8aed7fc0b8",
-"4709cd3b2f504658b11087c6823efb37",
-"33951aa85e374e3fbce656b767137b46",
-"93d7cd84f8ed433994ee6e7adbd08983",
-"4da2e387b0554add8ba2bb1c85c8d9ef",
-"ad0cd9a80dfe49368eedc31b1d19cc67",
-"f5508b66ef9c4d1987ff5eafe093821a",
-"c1bac2416ad64ca984158e9740a0edc0",
-"084375be31074a81b3d45bf6552f9c3f",
-"19c8c557a42242939024f15c4e514498",
-"cca7cc264a2b496d84414e4101f217a1",
-"1ea5ce9afdd645f29682824a52599e8d",
-"dd92842eec6b4f24b93f58fe0edaccb0",
-"5ede0e6049544817a2ef9463f1de1da7",
-"9ce9116b61b5487199d61c922f991c00",
-"599823de50b64a7d822b4401e107b1b0",
-"f3ad71df9c034f2ba7372a496f55fb42",
-"c79447263de24413b0576a6dae5e112e",
-"41c110be1ec645768ec8800419c2df27",
-"428a2327b75b4133ae324ff4c33d38a0",
-"41b719e536674fad931c9293fc134b1b",
-"c8fb05044d6d497eb668c3060c49a2e4",
-"1f55a47cf2a744fb9609ee147cb5c701",
-"3182b10e7a554dba83e6eb62902625a9",
-"4c7d52a8bc58407baf34e78dd562ff5f",
-"a3511ba427b34f4480bbfc56c8aae6e7",
-"147a9e5762d24f79a5d2779db56b79dd",
-"529e9988cf754a459508920511fa8927",
-"81714246bf394fcdb80b09ddd1d21a68",
-"efd0bf182a2a4853a84a9f84daa01dd4",
-"98a1fecf89cb466c9a5c39430b8023d0",
-"c91b3bd90ee5482f9ee540939c3c42bc",
-"3029f9e9faf8440e825a1237a5c68172",
-"80c648f06bec4969a3d7d64f40d23969",
-"65e31a4fb56f471f8cf84570f86b1477",
-"0fca8e882d254d129c1becc463d55ab8",
-"b5219073dcea4d57932541e1d8561cb0",
-"c69b062803854751b8b208975b6405e7",
-"acbcae7ee2204e82b498fdfd0d01a409",
-"2219c0b6253d4283ab61ff153988efbf",
-"844604f8a7f940ee80a12f7daa1f80ad",
-"f51b5e93f8914bb8922c98582143a431",
-"fadd7832312541d28ca2439566acda5e",
-"4c75ce06b6414da2825ab467a0840683",
-"66f87d0f04f04138a6e64425852e70cd",
-"1e30f7176fff41e39ab754e01bdcb8e0",
-"223af331a66a4408a959a04145355cc6",
-"4954a64047ab49fa8b8d5607ed4fc292",
-"feb560aee629495da986cea82a6391b9",
-"e12730cdc2e24b73a7de2d38fcd45590",
-"531f465727e74b5292ab7e4b84c4b810",
-"321d4e2d9c9a4765852280f52e45b5a1",
-"1367f751ec5b40fabc74d29feb766f16",
-"af10fbd3ec0c4a1088de23839b74efb0",
-"620b41d78ce245d4ac8b567fa663ef72",
-"09ae40074f9b4c378a1f8d2a51cef279",
-"bbdd6c28c9b440e390653be4a16d1db0",
-"f6035e5788b2407c8cfe80a95de14bff",
-"89f9ba28548a48b7bd339f3c20469bd1",
-"7439e98244e44a38a67e769d6e31913f",
-"0964ecf802fa4578a46b35ac9273e158",
-"4096ccf6819f4298af510024bbf96939",
-"1de347bdc3e445ceb20258d9646ee70f",
-"113d74615f36447985faae81258fa824",
-"8d89c8d64d1d4ba884a3706b23938bca",
-"b09c109bba114bbfa853c72179d34474",
+    '4d22b316e58146b4963efcfd3f8435c5',
+    '8b43007f031941b28c60f9a189a162e4',
+    '784dabd0ebef415cb3e6b78c56817a1a',
+    'b2fc22cf0de3441b863bfe49011cfd72',
+    'c3824b8abf17456c9c8283ff2c5a272c',
+    '486b29c49dc34018b10b452348b7e929',
+    '1ac66ba5b742490bb904b4ad690ef9fa',
+    'b18bec7121da406c9ce479ab17f5b51e',
+    'feb560aee629495da986cea82a6391b9',
+    
 ]
 let lz_cookie = {}
 
@@ -239,6 +46,7 @@ $.keywordsNum = 0;
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
+    // activityIdList = await getActivityIdList('https://raw.githubusercontent.com/FKPYW/dongge/master/code/wxCollectionActivity.json')
     for(let a in activityIdList){
         activityId = activityIdList[a];
         console.log("开起第 "+ a +" 个活动，活动id："+activityId)
@@ -269,7 +77,7 @@ $.keywordsNum = 0;
                 $.authorCode = authorCodeList[random(0, authorCodeList.length)]
                 $.authorNum = `${random(1000000, 9999999)}`
                 $.activityId = activityId
-                $.activityUrl = `https://lzkj-isv.isvjcloud.com//activity2/${$.authorNum}?activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}&adsource=null&sid=&un_area=`
+                $.activityUrl = `https://lzkj-isv.isvjcloud.com/wxCollectionActivity/activity2/${$.authorNum}?activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}&adsource=null&sid=&un_area=`
                 $.drawInfoName = false
                 $.getPrize = null;
                 await addCart();
@@ -660,6 +468,28 @@ function getSubstr(str, leftStr, rightStr){
     let right = str.indexOf(rightStr, left);
     if(left < 0 || right < left) return '';
     return str.substring(left + leftStr.length, right);
+}
+function getActivityIdList(url) {
+    return new Promise(resolve => {
+        const options = {
+            url: `${url}?${new Date()}`, "timeout": 10000, headers: {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
+            }
+        };
+        $.get(options, async (err, resp, data) => {
+            try {
+                if (err) {
+                    $.log(err)
+                } else {
+                if (data) data = JSON.parse(data)
+                }
+            } catch (e) {
+                $.logErr(e, resp)
+            } finally {
+                resolve(data);
+            }
+        })
+    })
 }
 function getUUID(format = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', UpperCase = 0) {
     return format.replace(/[xy]/g, function (c) {
